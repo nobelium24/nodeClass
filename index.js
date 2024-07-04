@@ -6,17 +6,17 @@ const UserRouter = require("./routes/UserRoutes")
 const ProductRoutes = require("./routes/ProductRoutes")
 const connectDb = require('./config/dbconfig')
 const productrouter = require("./routes/ProductRoutes")
+const cors = require("cors");
+
+app.use(cors({origin:"*"}));
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-connectDb()
 
 app.use(UserRouter);
 app.use(productrouter);
 
 
-
-
-
+connectDb()
 
 
 app.listen(4000, ()=>{
