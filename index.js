@@ -9,8 +9,8 @@ const productrouter = require("./routes/ProductRoutes")
 const cors = require("cors");
 
 app.use(cors({origin:"*"}));
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+app.use(express.urlencoded({ extended: true, limit:"200mb" }));
+app.use(express.json({extended:true, limit:"200mb"}));
 
 app.use(UserRouter);
 app.use(productrouter);
