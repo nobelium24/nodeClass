@@ -2,6 +2,7 @@ const userModel = require("../models/UserSchema");
 const UserModel = require("../models/UserSchema");
 const argon2 = require('argon2');
 const { generateToken, verifyToken } = require("../services/sessionServices");
+const { sendMail } = require("../services/mailerService");
 
 const SignUp = async (req, res) => {
   const { firstName, lastName, Email, Password } = req.body;
@@ -29,6 +30,7 @@ const SignUp = async (req, res) => {
     });
 
     if (createUser) {
+      await sendMail(Email, firstName, "signup")
       res.status(200).send({ message: "Account Created Successfully" });
     } else {
       res.status(400).send({ message: "Error Creating  Account" });

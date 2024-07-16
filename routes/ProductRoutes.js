@@ -7,7 +7,7 @@ productrouter.post("/add-product", AddProduct);
 productrouter.get("/get-product", getAllProducts)
 productrouter.get("/product/:id", getSingleProduct)
 productrouter.patch("/product/:id", updateProduct)
-productrouter.delete("/delete-product/:productName", deleteProduct)
+productrouter.delete("/delete-product", deleteProduct)
 productrouter.post("/upload-image", uploadImage);
 
 

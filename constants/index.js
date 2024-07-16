@@ -6,5 +6,6 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const CLOUD_NAME = process.env.CLOUD_NAME;
 const API_KEY = process.env.API_KEY;
 const API_SECRET = process.env.API_SECRET;
+const MAILER_PASSWORD = process.env.MAILER_PASSWORD
 
-module.exports = {MONGODB_URI, JWT_SECRET, API_KEY, API_SECRET, CLOUD_NAME};
+module.exports = {MONGODB_URI, JWT_SECRET, API_KEY, API_SECRET, CLOUD_NAME, MAILER_PASSWORD};
